@@ -102,6 +102,8 @@ Como jugador quiero poder ganar el juego y presumir ante todos
 
 ### US3 - Los movimientos son determinados por el lanzamiento del dado.
 Como jugador quiero mover mi ficha basándome en el lanzamiento de un dado para que haya un elemento de azar en el juego
+
+
 ![image](https://github.com/user-attachments/assets/19e936fc-ce4f-4df2-8fab-f30c578a98f1)
 
 **UAT1** Dado que el juego ha comenzado cuando el jugador lanza un dado entonces el resultado debe estar entre (1-6)
