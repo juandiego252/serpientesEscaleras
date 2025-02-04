@@ -51,6 +51,14 @@ Es posble elegir hasta 4 jugadores al iniciar el juego y se representan con la I
 ![image](https://github.com/user-attachments/assets/8c6e45ba-20a9-4cc7-be33-5d3cfce79405)
 
 
+Cuando un jugador cae en una escalera se presenta un mensaje con la posición a la cual llego.
+![image](https://github.com/user-attachments/assets/474d5090-515e-4ef2-be33-7fcb487bcdd8)
+
+Cuando un jugador cae en una serpiente se presenta un mensaje con la posición a la cual llego.
+![image](https://github.com/user-attachments/assets/18a4d64e-f5c5-411c-908b-e8a45717e60a)
+
+Cuando un jugador gana le juego se presenta el siguiente mensaje.
+![image](https://github.com/user-attachments/assets/e28f53b8-10b2-4716-9cdc-b6a1246ef245)
 
 
 
