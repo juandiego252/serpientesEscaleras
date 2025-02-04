@@ -36,9 +36,10 @@ El objetivo es llegar a la casilla final antes que los oponentes.
 
 ## Tablero en Consola
 ![image](https://github.com/user-attachments/assets/e723f38b-bbf7-4282-89cb-aa1d83e7cd70)
-`S` reprensenta las serpientes en el tablero con el color rojo
-`E` representa las escaleras en el tablero con el color verde
-`I` represa cuando ambos jugadores estan en la misma casilla con el color amarillo
+
+* `S` reprensenta las serpientes en el tablero con el color rojo
+* `E` representa las escaleras en el tablero con el color verde
+* `I` represa cuando ambos jugadores estan en la misma casilla con el color amarillo
 
 
 
