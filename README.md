@@ -43,8 +43,11 @@ El objetivo es llegar a la casilla final antes que los oponentes.
   
 #### Jugador
 ![image](https://github.com/user-attachments/assets/01dc5051-915d-4276-9f99-b38f5b97d6ce)
+
 Es posble elegir hasta 4 jugadores al iniciar el juego y se representan con la Inicial de sus Nombres
+
 ![image](https://github.com/user-attachments/assets/27f33c98-0488-46c1-9e58-a53aa2801bc6)
+
 ![image](https://github.com/user-attachments/assets/8c6e45ba-20a9-4cc7-be33-5d3cfce79405)
 
 
