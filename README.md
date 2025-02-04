@@ -59,9 +59,44 @@ Cuando un jugador cae en una serpiente se presenta un mensaje con la posición a
 
 
 
-Cuando un jugador gana le juego se presenta el siguiente mensaje.
+Cuando un jugador gana el juego se presenta el siguiente mensaje.
 
 ![image](https://github.com/user-attachments/assets/e28f53b8-10b2-4716-9cdc-b6a1246ef245)
+
+
+## Pruebas US y UATs
+### US1 - Mover la ficha por el tablero
+Como jugador quiero poder mover mi ficha para acercarme a la meta.
+**UAT1** Dado que el juego ha comenzado cuando la ficha se coloca en el tablero, entonces la ficha está en la casilla 1
+![image](https://github.com/user-attachments/assets/2524316e-aef0-4b45-b022-7da9d4f76dee)
+> Todos los jugadores comienzan en la casilla 1 y a medida en que tiren el dado pueden acercarse a la meta
+
+**UAT2** Dado que  la ficha está en la casilla 1, cuando la ficha se mueve 3 espacio, entonces la fichara está en la casilla 4
+![image](https://github.com/user-attachments/assets/569625ed-96aa-4967-8803-3a585e6d6dd9)
+
+**UAT3** Dado que la ficha está en la casilla 1, cuando la ficha se mueve 3 espacios y luego se mueve 4 espacios entonces la ficha está en la casilla 8
+![image](https://github.com/user-attachments/assets/9a680851-82b1-468f-9242-14db3d595ba5)
+> El jugador Diego saco el número 6, Diego se encuentra en la posicion 1 es decir avanza a la posicion 7 donde se encuentra una escalera y sube a la posicion 14
+
+### US2 - El jugador puede ganar el juego
+Como jugador quiero poder ganar el juego y presumir ante todos
+![image](https://github.com/user-attachments/assets/e28f53b8-10b2-4716-9cdc-b6a1246ef245)
+
+**UAT1** Dado que la ficha está en la casilla 97 cuando la ficha se mueve 3 espacios entonces la ficha está en la casilla 100 y el jugador ha ganado el juego
+![image](https://github.com/user-attachments/assets/5c8df1ef-e84f-48eb-b3a1-de5f895a6435)
+> El Jugador Diego se encuentra en la posicion 96 al tirar el dado saca un 4 esto le permite avanzar a la posicion 100 y ganar el juego.
+
+![image](https://github.com/user-attachments/assets/2daf8ac9-249f-491d-8550-7fa910232b8d)
+> Cuando el jugador está cerca de llegar a la posicion 100 pero al tirar el dado saco un numero mayor que excede la posicion 100, se muestra un mensaje y la posicion del jugador se mantiene igual y continua con el turno del siguiente jugador.
+
+### US3 - Los movimientos son determinados por el lanzamiento del dado.
+Como jugador quiero mover mi ficha basándome en el lanzamiento de un dado para que haya un elemento de azar en el juego
+![image](https://github.com/user-attachments/assets/19e936fc-ce4f-4df2-8fab-f30c578a98f1)
+
+**UAT1** Dado que el juego ha comenzado cuando el jugador lanza un dado entonces el resultado debe estar entre (1-6)
+![image](https://github.com/user-attachments/assets/6d6643dc-9259-4ac7-941d-96af05e355be)
+> El metodo `lanzar` asegura que los valores entre 1 y 6 sean aleatorios.
+
 
 
 
