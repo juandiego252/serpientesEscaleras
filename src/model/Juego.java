@@ -11,6 +11,7 @@ public class Juego {
     private Dado dado;
     private int turnoActual;
 
+    // Constructor para inicializar el juego con los jugadores y el tablero
     public Juego(List<Jugador> jugadores, Tablero tablero) {
         this.jugadores = jugadores;
         this.tablero = tablero;
@@ -18,28 +19,15 @@ public class Juego {
         this.turnoActual = 0;
     }
 
+    // obtener los jugadores
     public List<Jugador> getJugadores() {
         return jugadores;
     }
 
-    //    public void jugarTurno(Jugador jugador) {
-//        int resultadoDado = dado.lanzar();
-//        System.out.println(jugador.getNombre() + " lanzo el dado y obtuvo:" + resultadoDado);
-//        jugador.avanzar(resultadoDado);
-//
-//        int nuevaPosicion = jugador.getPosicion();
-//        if (tablero.getEscaleras().containsKey(nuevaPosicion)) {
-//            nuevaPosicion = tablero.getEscaleras().get(nuevaPosicion);
-//            System.out.println(jugador.getNombre() + "subio por una escalera a la posicion" + nuevaPosicion);
-//        } else if (tablero.getSerpientes().containsKey(nuevaPosicion)) {
-//            nuevaPosicion = tablero.getSerpientes().get(nuevaPosicion);
-//            System.out.println(jugador.getNombre() + "bajo por una serpiente a la posicion" + nuevaPosicion);
-//        }
-//
-//        jugador.setPosicion(nuevaPosicion);
-//    }
+    // Metodo para mostrar el estado del juego
     public void mostrarEstadodelJuego() {
         try {
+            // Limpiar la consola
             if (System.getProperty("os.name").contains("Windows")) {
                 new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
             } else {
@@ -51,22 +39,29 @@ public class Juego {
 
         // Mostrar estado del tablero y los jugadores
         tablero.dibujarTablero(jugadores);
+        System.out.println("**********************************************");
+        // Mostrar la posicion actual de los jugadores
         System.out.println(tablero.obtenerEstadoJugadores(jugadores));
         System.out.println("**********************************************");
     }
 
-    ;
 
     public void jugarTurno() {
+
+        // Obtener el jugador actual
         Jugador jugadorActual = jugadores.get(turnoActual);
         mostrarEstadodelJuego();
-        System.out.println("Es el turno de " + jugadorActual.getNombre());
-        System.out.println("Presiona Enter para lanzar el dado");
-        new Scanner(System.in).nextLine();
+
         System.out.println("**********************************************");
+        System.out.println("Es el turno de " + jugadorActual.getNombre());
+        System.out.println("Presiona Enter para lanzar el dado: ");
+        System.out.println("**********************************************");
+        new Scanner(System.in).nextLine();
+
         int resultadoDado = dado.lanzar();
         int nuevaPosicion = jugadorActual.getPosicion() + resultadoDado;
 
+        // Verificar si el jugador se pasa de la casilla 100
         if (nuevaPosicion > 100) {
             System.out.println("No te puedes mover más allá de la casilla 100");
             nuevaPosicion = jugadorActual.getPosicion();
@@ -79,6 +74,7 @@ public class Juego {
             nuevaPosicion = jugadorActual.getPosicion();
         }
 
+        // Verificar si el jugador cayo en una escalera o serpiente
         if (tablero.getEscaleras().containsKey(nuevaPosicion)) {
             nuevaPosicion = tablero.getEscaleras().get(nuevaPosicion);
             System.out.println(jugadorActual.getNombre() + " subio por una escalera a la posicion " + nuevaPosicion);
@@ -87,20 +83,27 @@ public class Juego {
             System.out.println(jugadorActual.getNombre() + " bajo por una serpiente a la posicion " + nuevaPosicion);
         }
 
+        // Actualizar la posicion del jugador
         jugadorActual.setPosicion(nuevaPosicion);
+        // Cambiar al siguiente jugador
         turnoActual = (turnoActual + 1) % jugadores.size();
     }
 
     public void iniciarJuego() {
-        while (jugadores.stream().noneMatch(jugador -> jugador.getPosicion() == 100)) {
+        Jugador gamador = null;
+        // Mientras no haya un ganador, seguir jugando
+        while (gamador == null) {
             jugarTurno();
-        }
-        Jugador ganador = jugadores.stream().max((j1, j2) -> Integer.compare(j1.getPosicion(), j2.getPosicion())).orElse(null);
-        if (ganador != null) {
-            System.out.println("\n¡" + ganador.getNombre() + " ha ganado el juego!\n");
-            System.out.println("Presiona una tecla para presumir tu victoria!");
-            new Scanner(System.in).nextLine();
-            System.out.println(ganador.getNombre() + " : GG Izi");
+            for (Jugador jugador : jugadores) {
+                if (jugador.getPosicion() == 100) {
+                    gamador = jugador;
+                    System.out.println("\n¡" + gamador.getNombre() + " ha ganado el juego!\n");
+                    System.out.println("Presiona una tecla para presumir tu victoria!");
+                    new Scanner(System.in).nextLine();
+                    System.out.println(gamador.getNombre() + " : ¡Soy el mejor!");
+                    break;
+                }
+            }
         }
     }
 }

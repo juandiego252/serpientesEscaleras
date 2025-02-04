@@ -14,7 +14,7 @@ public class Main {
                 Map.entry(21, 42), Map.entry(28, 84), Map.entry(36, 44), Map.entry(51, 67),
                 Map.entry(71, 91), Map.entry(78, 98), Map.entry(87, 94)
         );
-
+        // Serpientes y sus posiciones
         Map<Integer, Integer> serpientes = Map.of(
                 16, 6, 46, 25, 49, 11, 62, 19, 64, 60,
                 74, 53, 89, 68, 92, 88, 95, 75, 99, 80
@@ -26,11 +26,9 @@ public class Main {
         // Crear Jugadores
         Jugador jugador1 = new Jugador("Juan");
         Jugador jugador2 = new Jugador("Martin");
-        Jugador jugador3 = new Jugador("Andres");
-        Jugador jugador4 = new Jugador("Pedro");
 
         // Crear Juego
-        Juego juego = new Juego(List.of(jugador1,jugador2, jugador3, jugador4), tablero);
+        Juego juego = new Juego(List.of(jugador1, jugador2), tablero);
 
         // Iniciar juego
         juego.iniciarJuego();
