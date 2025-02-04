@@ -16,7 +16,7 @@ El objetivo es llegar a la casilla final antes que los oponentes.
 * Clonar el repositorio.
 * Abrir el proyecto en el IDE de su preferencia.
 * Ejecute la clase `Main`.
-> [!NOTE] Notas Adicionales
+> Notas Adicionales
 > 
 >  Versión JDK
 > Asegúrate de tener instalado JDK 17 o una versión superior. Puedes descargarlo desde el sitio web de Oracle JDK o utilizar una alternativa de código abierto como OpenJDK.
